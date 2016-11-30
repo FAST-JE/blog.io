@@ -1,7 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteBase /
-# Send request via webroot
 RewriteRule %{REQUEST_URI} !^/Webroot/ [L]
 RewriteRule [-a-zA-Z0-9_.]+ index.php [L]
 </IfModule>

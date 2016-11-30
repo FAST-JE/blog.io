@@ -1,23 +1,15 @@
 <?php
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
 
-    define('ROOT', dirname(__FILE__));
-    define('DS', DIRECTORY_SEPARATOR);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-    spl_autoload_extensions('.php');
-    spl_autoload_register(function ($class) {
-        // replace the namespace prefix with the base directory, replace namespace
-        // separators with directory separators in the relative class name, append
-        // with .php
-        $file = ROOT . DS . str_replace('\\', DS, $class) . '.php';
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(__FILE__).DS);
 
-        // if the file exists, require it
-        if (file_exists($file)) {
-            require $file;
-        }
-    });
+require ROOT.'App/app.php';
 
-    new \App\Lib\Config;
-    echo '<br>';
-    new \App\Config\Router;
+
+//    new \App\Lib\Config;
+//    echo '<br>';
+
+
